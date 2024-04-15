@@ -7,7 +7,7 @@ module "vpc" {
   subnets = [
     {
       subnet_name           = "subnet-01"
-      subnet_ip             = "10.10.20.0/24"
+      subnet_ip             = "10.100.0.0/24"
       subnet_region         = var.region
       subnet_private_access = "true"
       subnet_flow_logs      = true
@@ -19,11 +19,11 @@ module "vpc" {
     subnet-01 = [
       {
         range_name    = var.ip_range_pods_name
-        ip_cidr_range = "10.20.0.0/16"
+        ip_cidr_range = "10.10.0.0/16"
       },
       {
         range_name    = var.ip_range_services_name
-        ip_cidr_range = "10.21.0.0/16"
+        ip_cidr_range = "10.11.0.0/16"
       }
     ]
   }
